@@ -14,7 +14,10 @@ const RootLayout = ({
 }>) => {
 	return (
 		<html lang='pt-BR'>
-			<body>{children}</body>
+			<head>
+				<link rel='icon' href='/favicon.png' sizes='any' />
+			</head>
+			<body className='bg-light-primary'>{children}</body>
 		</html>
 	)
 }
