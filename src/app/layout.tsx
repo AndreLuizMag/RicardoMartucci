@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/styles/main.scss'
 import 'helix-color'
+import { Header } from '@/components/Header'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -17,7 +18,10 @@ const RootLayout = ({
 			<head>
 				<link rel='icon' href='/favicon.png' sizes='any' />
 			</head>
-			<body className='bg-light-primary'>{children}</body>
+			<body className='bg-light-primary'>
+				<Header />
+				{children}
+			</body>
 		</html>
 	)
 }

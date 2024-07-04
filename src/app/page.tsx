@@ -1,12 +1,10 @@
 import { Logo } from '@/components/Logo'
+import { HomeWrapped } from '@/templates/Home'
 
 const Home = () => {
 	return (
 		<main>
-			<div className='container-md'>
-				<h1 className='color-blue-regular'>Hello World</h1>
-				<Logo type='icon' />
-			</div>
+			<HomeWrapped />
 		</main>
 	)
 }
