@@ -1,0 +1,17 @@
+@import '../../../../styles/variables.scss';
+
+.card-comment {
+	box-shadow: 0px 0px 0px 2px var(--bg-light-2);
+
+	.background {
+		opacity: 0.32;
+	}
+	.content {
+		background-color: hsla(0, 0%, 95%, 0.32);
+		backdrop-filter: blur(32px);
+	}
+
+	@media screen and (max-width: $screen-md) {
+		min-width: 20rem;
+	}
+}

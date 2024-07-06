@@ -4,6 +4,7 @@ import { Logo } from '../Logo'
 import './styles.scss'
 import Link from 'next/link'
 import { Content } from './Content'
+import { SocialIcons } from '@/components/SocialIcons'
 
 export const Header = () => {
 	const [menuState, setMenuState] = useState(false)
@@ -26,13 +27,14 @@ export const Header = () => {
 						<div className='col sm:ds-none'>
 							<Content />
 						</div>
-						<div className='col'>
+						<div className='col ds-flex-end flow-row-nw'>
 							<button
 								type='button'
 								onClick={handleClick}
 								className='ds-none sm:ds-block'>
 								Menu
 							</button>
+							<SocialIcons />
 						</div>
 					</div>
 				</div>

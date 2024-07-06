@@ -1,0 +1,11 @@
+.sec-info {
+	.image {
+		background: {
+			image: url('../../../../public/Image/info.jpg');
+			position: center;
+			size: cover;
+			repeat: no-repeat;
+		}
+		box-shadow: inset 0px 0px 0px 16px var(--rm-secondary);
+	}
+}

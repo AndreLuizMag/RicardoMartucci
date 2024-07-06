@@ -1,0 +1,41 @@
+:root {
+	--rm-primary: #00528e;
+	--rm-secondary: #002345;
+	--rm-tertiary: #212931;
+}
+
+.color-rm {
+	&-primary {
+		color: var(--rm-primary);
+	}
+	&-secondary {
+		color: var(--rm-secondary);
+	}
+	&-tertiary {
+		color: var(--rm-tertiary);
+	}
+}
+.bg-rm {
+	&-primary {
+		background-color: var(--rm-primary);
+	}
+	&-secondary {
+		background-color: var(--rm-secondary);
+	}
+	&-tertiary {
+		background-color: var(--rm-tertiary);
+	}
+}
+.hover {
+	&\:bg-rm {
+		&-primary:hover {
+			background-color: var(--rm-primary);
+		}
+		&-secondary:hover {
+			background-color: var(--rm-secondary);
+		}
+		&-tertiary:hover {
+			background-color: var(--rm-tertiary);
+		}
+	}
+}

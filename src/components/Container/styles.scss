@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+@mixin scroll {
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	overflow: auto;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: transparent;
+	}
+
+	.Content {
+		padding: 0;
+		width: fit-content;
+		width: --moz-fit-content;
+	}
+}
+
+.container {
+	@media screen and (max-width: $screen-lg) {
+		&.lg {
+			@include scroll;
+		}
+	}
+	@media screen and (max-width: $screen-md) {
+		&.md {
+			@include scroll;
+		}
+	}
+	@media screen and (max-width: $screen-sm) {
+		&.sm {
+			@include scroll;
+		}
+	}
+}

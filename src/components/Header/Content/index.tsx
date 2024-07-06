@@ -14,7 +14,7 @@ export const Content = () => {
 				<Link
 					key={index}
 					href={item.href}
-					className='item color-light-primary font-weight-semi-bold text-decoration-none p-inline-6 p-block-2'>
+					className='item color-light-primary font-weight-semi-bold text-decoration-none line-height-none p-inline-6 p-block-4 radius-2xs duration-normal property-color ease-in-out hover:bg-blue-lighten hover:color-blue-dark'>
 					{item.name}
 				</Link>
 			))}
