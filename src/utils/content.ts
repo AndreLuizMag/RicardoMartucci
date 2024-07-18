@@ -1,14 +1,14 @@
 export const headerItems = [
 	{
-		name: 'Item 1',
+		name: 'Seção 1',
 		href: '#',
 	},
 	{
-		name: 'Item 2',
+		name: 'Seção 2',
 		href: '#',
 	},
 	{
-		name: 'Item 3',
+		name: 'Seção 3',
 		href: '#',
 	},
 ]

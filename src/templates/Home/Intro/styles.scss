@@ -1,3 +1,73 @@
 .sec-intro {
 	border-radius: 1.5rem 1.5rem 0rem 0rem;
+	background: linear-gradient(
+		249deg,
+		#00528e 29.01%,
+		#002345 97.32%
+	);
+
+	.title {
+		font-size: 4rem;
+	}
+
+	.card {
+		.btn {
+			transition: {
+				duration: var(--duration-normal);
+				property: background-color, color;
+				timing-function: var(--ease-in-out);
+			}
+
+			&.primary {
+				background-color: hsl(210, 100%, 14%);
+				color: white;
+
+				&:hover {
+					background-color: hsl(210, 100%, 24%);
+				}
+			}
+			&.outlined {
+				background-color: white;
+				box-shadow: inset 0px 0px 0px 2px #002345;
+				color: #002345;
+
+				&:hover {
+					color: hsl(210, 100%, 24%);
+					box-shadow: inset 0px 0px 0px 2px
+						hsl(210, 100%, 24%);
+				}
+			}
+		}
+	}
+
+	img {
+		border-radius: 2rem 2rem 0rem 0rem;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		background: {
+			position: center;
+			repeat: no-repeat;
+			size: contain;
+		}
+	}
+
+	&::before {
+		left: 0;
+		width: 384px;
+		height: 157px;
+		background-image: url('../../../../public/Image/line-one.svg');
+	}
+
+	&::after {
+		right: 0;
+		width: 332px;
+		height: 455px;
+		background-image: url('../../../../public/Image/line-two.svg');
+	}
 }

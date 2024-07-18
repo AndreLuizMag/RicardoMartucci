@@ -8,4 +8,10 @@
 		top: calc(100% - 0.25rem);
 		box-shadow: 0px 1px 0px 0px var(--bg-light-3);
 	}
+
+	.menu-button {
+		height: 42px;
+		background-color: transparent;
+		border: none;
+	}
 }

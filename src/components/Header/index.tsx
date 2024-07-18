@@ -32,9 +32,18 @@ export const Header = () => {
 							<button
 								type='button'
 								onClick={handleClick}
-								className='ds-none lg:ds-block'>
-								<X size={24} />
-								<List size={24} />
+								className='menu-button ds-none lg:ds-block overflow-hidden'
+								title='Menu'>
+								<motion.div
+									className='ds-flex flow-col-nw gap-xs'
+									animate={menuState ? 'open' : 'closed'}
+									variants={{
+										open: { y: 0 },
+										closed: { y: -32 },
+									}}>
+									<X size={24} />
+									<List size={24} />
+								</motion.div>
 							</button>
 							<div className='lg:ds-none'>
 								<SocialIcons />
