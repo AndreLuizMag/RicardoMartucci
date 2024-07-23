@@ -1,8 +1,14 @@
+@import '../../../../styles/variables.scss';
+
 .card-more {
 	min-height: 15rem;
 	.btn-more {
 		bottom: 0.5rem;
 		right: 0.5rem;
 		border: none;
+	}
+
+	@media screen and (max-width: $screen-md) {
+		min-width: 20rem;
 	}
 }

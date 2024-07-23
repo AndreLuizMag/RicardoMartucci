@@ -7,12 +7,12 @@ export const Intro = () => {
 	return (
 		<section className='sec-intro ps-relative width-100 pt-16 bg-blue-dark'>
 			<div className='container-lg ps-relative z-index-02'>
-				<div className='row align-stretch gap-3xl'>
-					<div className='col pb-16 ds-flex flow-col-nw justify-end align-start gap-lg '>
+				<div className='row align-stretch gap-3xl lg:gapless'>
+					<div className='col pb-16 sm:pb-10 ds-flex flow-col-nw justify-end align-start gap-lg '>
 						<h1 className='title color-dark-primary'>
 							Dr Ricardo Martucci
 						</h1>
-						<div className='card p-10 ds-flex flow-col-nw gap-md radius-lg bg-light-secondary'>
+						<div className='card p-10 sm:p-6 ds-flex flow-col-nw gap-md radius-lg bg-light-secondary'>
 							<p className='font-size-lg'>
 								Referência no tratamento de varizes com e
 								transplantes de ponte de safena.
@@ -20,12 +20,12 @@ export const Intro = () => {
 							<div className='ds-flex gap-sm'>
 								<Link
 									href=''
-									className='btn primary text-decoration-none p-inline-10 p-block-5 radius-xs'>
+									className='btn primary text-decoration-none p-inline-10 sm:p-inline-6 p-block-5 radius-xs'>
 									Saber mais
 								</Link>
 								<Link
 									href=''
-									className='btn outlined text-decoration-none p-inline-10 p-block-5 radius-xs'>
+									className='btn outlined text-decoration-none p-inline-10 sm:p-inline-6 p-block-5 radius-xs'>
 									Enrar em contato
 								</Link>
 							</div>
@@ -37,6 +37,7 @@ export const Intro = () => {
 							width={475}
 							height={524}
 							alt='Imagem Ricardo Martucci'
+							className='height-auto'
 						/>
 					</div>
 				</div>

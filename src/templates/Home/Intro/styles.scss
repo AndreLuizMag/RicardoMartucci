@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .sec-intro {
 	border-radius: 1.5rem 1.5rem 0rem 0rem;
 	background: linear-gradient(
@@ -69,5 +71,13 @@
 		width: 332px;
 		height: 455px;
 		background-image: url('../../../../public/Image/line-two.svg');
+	}
+}
+@media (max-width: $screen-lg) {
+	.sec-intro {
+		&::before,
+		&::after {
+			content: none;
+		}
 	}
 }

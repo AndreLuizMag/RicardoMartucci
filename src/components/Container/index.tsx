@@ -23,7 +23,9 @@ const Container: FC<ContainerProps> = ({
 			} ${className}`}
 			{...props}>
 			{scrolled ? (
-				<div className={`content`}>{children}</div>
+				<div className={`content width-fit`}>
+					{children}
+				</div>
 			) : (
 				children
 			)}

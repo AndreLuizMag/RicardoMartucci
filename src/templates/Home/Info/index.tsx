@@ -8,7 +8,7 @@ export const Info = () => {
 			<div className='container-lg'>
 				<div className='card bg-rm-primary radius-3xl overflow-hidden'>
 					<div className='row align-stretch'>
-						<div className='col p-16 ds-flex-start flow-col-nw gap-3xl'>
+						<div className='col p-16 sm:p-10 ds-flex-start flow-col-nw gap-3xl'>
 							<div className='ds-flex flow-col-nw gap-sm'>
 								<h2 className='color-dark-primary'>
 									Lorem ipsum
@@ -41,7 +41,7 @@ export const Info = () => {
 								Entrar em contato
 							</Link>
 						</div>
-						<div className='col image radius-3xl'></div>
+						<div className='col image radius-3xl lg:ds-none'></div>
 					</div>
 				</div>
 			</div>

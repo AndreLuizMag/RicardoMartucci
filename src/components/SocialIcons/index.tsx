@@ -27,7 +27,9 @@ const Icon: FC<Icon> = ({ href, children }) => {
 	return (
 		<Link
 			href={href}
-			className='text-decoration-none line-height-none p-2 radius-2xs color-light-secondary duration-normal property-color ease-in-out hover:bg-blue-lighten hover:color-blue-dark'>
+			className='text-decoration-none line-height-none p-2 radius-2xs color-light-secondary duration-normal property-color ease-in-out hover:bg-blue-lighten hover:color-blue-dark'
+			target='_blank'
+			rel='noopener noreferrer'>
 			{children}
 		</Link>
 	)
