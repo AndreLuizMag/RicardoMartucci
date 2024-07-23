@@ -4,7 +4,9 @@ import React from 'react'
 
 export const Contact = () => {
 	return (
-		<section className='p-block-16 bg-rm-tertiary'>
+		<section
+			className='p-block-16 bg-rm-tertiary'
+			id='three'>
 			<div className='container-lg'>
 				<div className='card width-100 bg-light-primary p-10 radius-xl'>
 					<div className='row align-stretch'>

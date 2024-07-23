@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const Info = () => {
 	return (
-		<section className='sec-info p-block-16'>
+		<section className='sec-info p-block-16' id='two'>
 			<div className='container-lg'>
 				<div className='card bg-rm-primary radius-3xl overflow-hidden'>
 					<div className='row align-stretch'>

@@ -4,7 +4,9 @@ import Container from '@/components/Container'
 
 export const More = () => {
 	return (
-		<section className='p-block-16 lg:pb-6 bg-light-secondary'>
+		<section
+			className='p-block-16 lg:pb-6 bg-light-secondary'
+			id='one'>
 			<div className='container-lg lg:p-0'>
 				<div className='row align-stretch lg:gapless'>
 					<div className='col lg:p-inline-7 is-3 ds-flex flow-col-nw gap-xs'>

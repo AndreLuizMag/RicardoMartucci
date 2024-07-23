@@ -1,15 +1,15 @@
 export const headerItems = [
 	{
 		name: 'Seção 1',
-		href: '#',
+		href: '#one',
 	},
 	{
 		name: 'Seção 2',
-		href: '#',
+		href: '#two',
 	},
 	{
 		name: 'Seção 3',
-		href: '#',
+		href: '#three',
 	},
 ]
 
