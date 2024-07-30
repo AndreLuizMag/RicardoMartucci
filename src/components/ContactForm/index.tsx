@@ -4,6 +4,7 @@ import { useForm, FormProvider } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form } from '../Form'
+import { addUser } from '@/lib/firebase/firestore'
 
 type CreateFormData = z.infer<typeof schema>
 
@@ -55,6 +56,8 @@ const defaultValuesForm: CreateFormData = {
 export const ContactForm = () => {
 	const [isSaving, setIsSaving] = useState<boolean>(false)
 	const [isLoading, setIsLoading] = useState<boolean>(false)
+	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState<string | null>(null)
 
 	const createForm = useForm<CreateFormData>({
 		resolver: zodResolver(schema),
@@ -82,6 +85,23 @@ export const ContactForm = () => {
 	// }, [createForm.watch('cpf')])
 
 	const onSubmit = async (data: any) => {
+		// event.preventDefault();
+		setLoading(true)
+		setError(null)
+
+		try {
+			await addUser({
+				name: data.name,
+				email: data.email,
+				subject: data.subject,
+			})
+			clearForm()
+		} catch (error) {
+			setError('Failed to add user')
+		} finally {
+			setLoading(false)
+		}
+
 		console.log('---- Submit ----')
 		console.log('Name - ', data.name)
 		console.log('E-mail - ', data.email)
