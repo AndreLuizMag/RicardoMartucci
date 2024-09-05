@@ -1,10 +1,16 @@
 'use client'
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { Plus, Minus } from '@phosphor-icons/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './styles.scss'
 
-export const Card = () => {
+type CardProps = {
+	title: string
+	subtitle: string
+	children: ReactNode
+}
+
+export const Card = ({title, subtitle, children}:CardProps) => {
 	const [showMoreInfo, setShowMoreInfo] = useState(false)
 
 	const toggleMoreInfo = () => {
@@ -13,10 +19,12 @@ export const Card = () => {
 
 	return (
 		<div className='card-more ps-relative p-6 overflow-hidden flex-bgs radius-xl bg-rm-tertiary'>
-			<h3 className='color-dark-secondary'>Lorem ipsum</h3>
+			<div className="ds-flex flow-col-nw gap-xs">
+			<h3 className='color-dark-secondary'>{title}</h3>
 			<p className='color-dark-tertiary'>
-				Lorem ipsum dolor sit amet
+				{subtitle}
 			</p>
+			</div>
 			<button
 				type='button'
 				title='Mais informações'
@@ -41,7 +49,9 @@ export const Card = () => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.32 }}>
-						<MoreInfo />
+						<MoreInfo>
+							{children}
+							</MoreInfo>
 					</motion.div>
 				)}
 			</AnimatePresence>
@@ -49,7 +59,11 @@ export const Card = () => {
 	)
 }
 
-const MoreInfo = () => {
+type MoreInfoProps = {
+	children: ReactNode
+}
+
+const MoreInfo = ({children}: MoreInfoProps) => {
 	return (
 		<motion.p
 			initial={{ y: 16, opacity: 0 }}
@@ -57,9 +71,7 @@ const MoreInfo = () => {
 			exit={{ y: 16, opacity: 0 }}
 			transition={{ duration: 0.32, delay: 0.28 }}
 			className='color-dark-tertiary'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing
-			elit, sed do eiusmod tempor incididunt ut labore et
-			dolore magna aliqua
+			{children}
 		</motion.p>
 	)
 }

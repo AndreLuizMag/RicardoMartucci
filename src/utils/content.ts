@@ -1,29 +1,29 @@
 export const headerItems = [
 	{
-		name: 'Seção 1',
-		href: '#one',
+		name: 'Saiba mais',
+		href: 'one',
 	},
 	{
-		name: 'Seção 2',
-		href: '#two',
+		name: 'Sobre',
+		href: 'two',
 	},
 	{
-		name: 'Seção 3',
-		href: '#three',
+		name: 'Contato',
+		href: 'three',
 	},
-]
+];
 
 export const socialLinks = [
 	{
 		name: 'facebook',
-		href: '#',
+		href: 'https://www.facebook.com/DrRicardoMartucci/',
 	},
 	{
 		name: 'instagram',
-		href: '#',
+		href: 'https://www.instagram.com/dr.ricardomartucci/',
 	},
 	{
 		name: 'whatsapp',
 		href: '#',
 	},
-]
+];

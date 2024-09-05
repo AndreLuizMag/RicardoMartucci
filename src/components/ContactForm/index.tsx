@@ -4,7 +4,9 @@ import { useForm, FormProvider } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form } from '../Form'
-import { addUser } from '@/lib/firebase/firestore'
+import './styles.scss';
+import { addContact } from '@/lib/supabase/actions'
+import toast, { Toaster } from 'react-hot-toast';
 
 type CreateFormData = z.infer<typeof schema>
 
@@ -75,48 +77,31 @@ export const ContactForm = () => {
 		console.log(errors)
 	}
 
-	// useEffect(() => {
-	// 	if (createForm.watch('cpf')) {
-	// 		const unmaskedCpf = createForm
-	// 			.watch('cpf')
-	// 			.replace(/\D/g, '')
-	// 		createForm.setValue('cpf', cpfMask(unmaskedCpf))
-	// 	}
-	// }, [createForm.watch('cpf')])
-
 	const onSubmit = async (data: any) => {
-		// event.preventDefault();
 		setLoading(true)
 		setError(null)
 
 		try {
-			await addUser({
+			const submit = await addContact({
 				name: data.name,
 				email: data.email,
 				subject: data.subject,
 			})
+			toast.success('E-mail enviado com sucesso!', {
+				duration: 8000,
+			}) 
+			console.error(submit);
 			clearForm()
+			
 		} catch (error) {
 			setError('Failed to add user')
+			console.error('Error - ', error)
+			toast.error('Erro ao realizar o cadastro', {
+				duration: 8000,
+			})
 		} finally {
 			setLoading(false)
 		}
-
-		console.log('---- Submit ----')
-		console.log('Name - ', data.name)
-		console.log('E-mail - ', data.email)
-		console.log('Assunto - ', data.subject)
-		console.log(
-			'---- Delay - Simulate server response ----'
-		)
-		setIsLoading(true)
-		setTimeout(() => {
-			console.log('---- Server response ----')
-			setIsLoading(false)
-			setIsSaving(true)
-			clearForm()
-			console.log('---- End form ----')
-		}, 2000)
 	}
 
 	const clearForm = () => {
@@ -162,42 +147,6 @@ export const ContactForm = () => {
 							<Form.ErrorMessage field='email' />
 						</Form.Field>
 					</div>
-					{/* <Form.Field>
-						<Form.Label htmlFor='select'>Select</Form.Label>
-						<Form.Select
-							name='select'
-							options={selctionOptions}
-						/>
-						<Form.ErrorMessage field='select' />
-					</Form.Field>
-					<Form.Field>
-						<Form.Label htmlFor='checkbox' required>
-							Checkox
-						</Form.Label>
-						<Form.Input type='checkbox' name='checkbox' />
-						<Form.ErrorMessage field='checkbox' />
-					</Form.Field>
-					<Form.Field>
-						<Form.Label htmlFor='radio' required>
-							Radio
-						</Form.Label>
-						{radioOptions.map((item, index) => (
-							<div
-								key={index}
-								className='ds-flex flow-row-nw justify-start align-center gap-xs'>
-								<Form.Radio
-									name='radio'
-									id={`radio-${item.value}`}
-									value={item.value}
-									title=''
-								/>
-								<label htmlFor={`radio-${item.value}`}>
-									{item.label}
-								</label>
-							</div>
-						))}
-						<Form.ErrorMessage field='radio' />
-					</Form.Field> */}
 				</div>
 				<div className='row'>
 					<div className='col'>
@@ -230,10 +179,11 @@ export const ContactForm = () => {
 					</div>
 				</div>
 
-				<div className='ds-flex flow-row-nw gap-sm'>
+				<div className='ds-flex flow-row-nw gap-sm pt-4'>
 					<button
 						type='submit'
-						disabled={isLoading || isSaving}>
+						disabled={isLoading || isSaving}
+						className='width-100 p-block-6 p-inline-6 font-size-md radius-xs border-style-none color-dark-primary bg-rm-primary hover:bg-rm-secondary duration-normal property-all ease-in-out'>
 						{!isLoading && !isSaving
 							? 'Entrar em contato'
 							: isLoading && !isSaving
@@ -250,6 +200,11 @@ export const ContactForm = () => {
 					</button> */}
 				</div>
 			</FormProvider>
+
+			<Toaster
+  position="bottom-center"
+  reverseOrder={false}
+/>
 		</form>
 	)
 }

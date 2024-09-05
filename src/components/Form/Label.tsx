@@ -2,16 +2,17 @@ import { FC, LabelHTMLAttributes, ReactNode } from 'react'
 
 interface LabelProps
 	extends LabelHTMLAttributes<HTMLLabelElement> {
+		htmlFor: string
 	children: ReactNode
 	required?: boolean
 }
 
 export const Label: FC<LabelProps> = (
-	{ children, required },
+	{ htmlFor, children, required },
 	props
 ) => {
 	return (
-		<label {...props}>
+		<label htmlFor={htmlFor} {...props}>
 			{children}
 			{required ? '*' : null}
 		</label>

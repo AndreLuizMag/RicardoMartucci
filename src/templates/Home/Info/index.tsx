@@ -1,10 +1,11 @@
 import React from 'react'
 import './styles.scss'
 import Link from 'next/link'
+import { pageProps } from '@/types/pageProps'
 
-export const Info = () => {
+export const Info = ({id}:pageProps) => {
 	return (
-		<section className='sec-info p-block-16' id='two'>
+		<section className='sec-info p-block-16' id={id}>
 			<div className='container-lg'>
 				<div className='card bg-rm-primary radius-3xl overflow-hidden'>
 					<div className='row align-stretch'>
@@ -15,23 +16,7 @@ export const Info = () => {
 								</h2>
 								<div className='color-dark-tertiary'>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna
-										aliqua
-									</p>
-									<p>
-										Ut enim ad minim veniam, quis nostrud
-										exercitation ullamco laboris nisi ut
-										aliquip ex ea commodo consequat. Duis
-										aute irure dolor in reprehenderit in
-										voluptate velit esse cillum dolore eu
-										fugiat nulla pariatur.
-									</p>
-									<p>
-										Excepteur sint occaecat cupidatat non
-										proident, sunt in culpa qui officia
-										deserunt mollit anim id est laborum.
+									Dr. Ricardo Martucci, especialista em Cirurgia Vascular pela SBACV e sócio efetivo da SBLMC, traz mais de 40 anos de experiência no atendimento de pacientes com técnicas de ponta. Comprometido com procedimentos menos invasivos e altamente eficazes, ele se dedica ao tratamento de doenças arteriais, venosas e linfáticas, sempre focado no bem-estar e na rápida recuperação de seus pacientes.
 									</p>
 								</div>
 							</div>

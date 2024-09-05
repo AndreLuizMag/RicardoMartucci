@@ -14,8 +14,7 @@ export const Intro = () => {
 						</h1>
 						<div className='card p-10 sm:p-6 ds-flex flow-col-nw gap-md radius-lg bg-light-secondary'>
 							<p className='font-size-lg'>
-								Referência no tratamento de varizes com e
-								transplantes de ponte de safena.
+							Referência no tratamento de varizes e especialista em transplantes de ponte de safena.
 							</p>
 							<div className='ds-flex gap-sm'>
 								<Link

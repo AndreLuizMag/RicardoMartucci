@@ -25,7 +25,7 @@ export const Header = () => {
 								<Logo className='logo' />
 							</Link>
 						</div>
-						<div className='col lg:ds-none'>
+						<div className='lg:ds-none'>
 							<Content />
 						</div>
 						<div className='col ds-flex-end flow-row-nw'>
