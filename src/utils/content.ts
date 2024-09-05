@@ -1,15 +1,15 @@
 export const headerItems = [
 	{
 		name: 'Saiba mais',
-		href: 'one',
+		href: 'saiba-mais',
 	},
 	{
 		name: 'Sobre',
-		href: 'two',
+		href: 'sobre',
 	},
 	{
 		name: 'Contato',
-		href: 'three',
+		href: 'contato',
 	},
 ];
 
